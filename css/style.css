@@ -446,7 +446,7 @@ template {
 
 .parallax__group {
   position: relative;
-  height: 100vh;
+  height: 100%;
   -webkit-transform-style: preserve-3d;
           transform-style: preserve-3d;
   -webkit-box-sizing: border-box;
@@ -535,7 +535,7 @@ template {
     -webkit-transform: rotate(45deg);
             transform: rotate(45deg); }
   .parallax__layer--intro {
-    padding-bottom: 50px; }
+    padding-bottom: 100px; }
     .parallax__layer--intro::before {
       bottom: 15px;
       border-top: none;
