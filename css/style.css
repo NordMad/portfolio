@@ -18,9 +18,13 @@ body {
   position: relative;
   font-family: "Roboto", "Arial", sans-serif;
   color: #ffffff;
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 400;
-  line-height: 18px; }
+  line-height: 16px; }
+  @media (min-height: 500px) {
+    body {
+      font-size: 14px;
+      line-height: 18px; } }
   @media (min-width: 768px) {
     body {
       font-size: 18px;
@@ -446,7 +450,7 @@ template {
 
 .parallax__group {
   position: relative;
-  height: 100%;
+  height: inherit;
   -webkit-transform-style: preserve-3d;
           transform-style: preserve-3d;
   -webkit-box-sizing: border-box;
@@ -525,23 +529,29 @@ template {
     -webkit-transform: translateZ(90px) scale(0.7);
             transform: translateZ(90px) scale(0.7);
     z-index: 1; }
-  .parallax__layer::before {
-    position: absolute;
-    display: block;
-    content: "";
-    width: 15px;
-    height: 15px;
-    border: 2px solid rgba(255, 255, 255, 0.3);
-    -webkit-transform: rotate(45deg);
-            transform: rotate(45deg); }
   .parallax__layer--intro {
-    padding-bottom: 100px; }
-    .parallax__layer--intro::before {
-      bottom: 15px;
-      border-top: none;
-      border-left: none; }
+    padding-top: 40px;
+    padding-bottom: 85px; }
   .parallax__layer--portfolio {
     max-width: 1240px; }
+  .parallax__layer--about {
+    padding-bottom: 35px; }
+  @media (min-height: 568px) {
+    .parallax__layer::before {
+      position: absolute;
+      display: block;
+      content: "";
+      width: 15px;
+      height: 15px;
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      -webkit-transform: rotate(45deg);
+              transform: rotate(45deg); }
+    .parallax__layer--intro {
+      padding-bottom: 110px; }
+      .parallax__layer--intro::before {
+        bottom: 15px;
+        border-top: none;
+        border-left: none; }
     .parallax__layer--portfolio::before {
       top: 15px;
       border-bottom: none;
@@ -558,12 +568,10 @@ template {
       border: 2px solid rgba(255, 255, 255, 0.3);
       border-top: none;
       border-left: none; }
-  .parallax__layer--about {
-    padding-bottom: 30px; }
     .parallax__layer--about::before {
       top: 15px;
       border-bottom: none;
-      border-right: none; }
+      border-right: none; } }
   @media (min-width: 768px) {
     .parallax__layer {
       padding: 0 20px; } }
@@ -753,9 +761,12 @@ template {
 
 .intro__contacts {
   position: absolute;
-  bottom: 70px;
+  bottom: 25px;
   left: 0;
   right: 0; }
+  @media (min-height: 568px) {
+    .intro__contacts {
+      bottom: 50px; } }
   @media (min-width: 768px) {
     .intro__contacts {
       bottom: 100px; } }
@@ -798,7 +809,7 @@ template {
   height: 28px;
   background-color: rgba(255, 255, 255, 0.3);
   background-repeat: no-repeat;
-  background-size: 20px 20px;
+  background-position: center;
   border-radius: 6px; }
   .intro__social:hover, .intro__social:focus {
     -webkit-transform: scale(1.05);
@@ -817,16 +828,19 @@ template {
     transition: transform 0.2s, opacity 0.2s, -webkit-transform 0.2s; }
   .intro__social--vkontakte {
     background-image: url("../img/logo-vk.svg");
-    background-position: 3px 5px; }
+    background-size: 22px 14px;
+    background-position: 2.5px 8px; }
     .intro__social--vkontakte:hover, .intro__social--vkontakte:focus {
       background-color: #4c75a3; }
   .intro__social--telegram {
     background-image: url("../img/logo-telegram.svg");
-    background-position: 3px 4px; }
+    background-size: 22px 18px;
+    background-position: 2px 5px; }
     .intro__social--telegram:hover, .intro__social--telegram:focus {
       background-color: #0088cc; }
   .intro__social--github {
     background-image: url("../img/logo-github.svg");
+    background-size: 22px 22px;
     background-position: center; }
     .intro__social--github:hover, .intro__social--github:focus {
       background-color: #333333; }
@@ -840,6 +854,14 @@ template {
         background-position: 4px 12px; }
       .intro__social--telegram {
         background-position: 5px 9px; } }
+
+.intro__email {
+  font-size: 14px;
+  line-height: 18px; }
+  @media (min-width: 768px) {
+    .intro__email {
+      font-size: 18px;
+      line-height: 24px; } }
 
 .portfolio__block {
   position: relative;
@@ -1017,21 +1039,8 @@ template {
   background-color: transparent;
   opacity: 0.5;
   z-index: 10; }
-  .portfolio__arrow:hover, .portfolio__arrow:focus {
-    opacity: 1;
-    -webkit-transform: scale(1.1);
-            transform: scale(1.1);
-    -webkit-transition: opacity 0.5s, -webkit-transform 0.5s;
-    transition: opacity 0.5s, -webkit-transform 0.5s;
-    transition: transform 0.5s, opacity 0.5s;
-    transition: transform 0.5s, opacity 0.5s, -webkit-transform 0.5s; }
   .portfolio__arrow:active {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-    -webkit-transition: -webkit-transform 0.2s;
-    transition: -webkit-transform 0.2s;
-    transition: transform 0.2s;
-    transition: transform 0.2s, -webkit-transform 0.2s; }
+    opacity: 1; }
   .portfolio__arrow--prev {
     left: 0; }
   .portfolio__arrow--next {
@@ -1045,6 +1054,22 @@ template {
       .portfolio__arrow svg {
         width: 30px;
         height: 100px; } }
+  @media (min-width: 1200px) {
+    .portfolio__arrow:hover, .portfolio__arrow:focus {
+      opacity: 1;
+      -webkit-transform: scale(1.1);
+              transform: scale(1.1);
+      -webkit-transition: opacity 0.5s, -webkit-transform 0.5s;
+      transition: opacity 0.5s, -webkit-transform 0.5s;
+      transition: transform 0.5s, opacity 0.5s;
+      transition: transform 0.5s, opacity 0.5s, -webkit-transform 0.5s; }
+    .portfolio__arrow:active {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+      -webkit-transition: -webkit-transform 0.2s;
+      transition: -webkit-transform 0.2s;
+      transition: transform 0.2s;
+      transition: transform 0.2s, -webkit-transform 0.2s; } }
 
 .portfolio__image {
   margin-bottom: 20px; }
@@ -1071,7 +1096,10 @@ template {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  min-height: 200px; }
+  min-height: 170px; }
+  @media (min-height: 500px) {
+    .portfolio__tech-block {
+      min-height: 200px; } }
   @media (min-width: 768px) {
     .portfolio__tech-block {
       width: 600px;
@@ -1174,6 +1202,8 @@ template {
   max-width: 300px;
   min-height: 40px;
   margin: 0 auto;
+  font-size: 14px;
+  line-height: 18px;
   -webkit-box-ordinal-group: 0;
       -ms-flex-order: -1;
           order: -1; }
